@@ -4,18 +4,18 @@ import OrderForm from "./OrderForm";
 
 const Body = () => {
   return (
-    <div class="container">
+    <div className="container-body">
       <div>
-        <div class="pizza-stage">
+        <div className="pizza-stage">
           <h3>Pizza Stage</h3>
           <PizzaStage />
         </div>
-        <div class="main-section">
+        <div className="main-section">
           <h3>Main Section</h3>
           <MainSection />
         </div>
       </div>
-      <div class="order-form">
+      <div className="order-form">
         <h3>Create A Order</h3>
         <OrderForm />
       </div>
