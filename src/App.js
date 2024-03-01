@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./Components/Header";
+import "./App.css";
+import PizzaStage from "./Components/PizzaStage";
+import MainSection from "./Components/MainSection";
+import OrderForm from "./Components/OrderForm";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header>
+        <Header />
       </header>
-    </div>
+      <div class="container">
+        <div>
+          <div class="pizza-stage">
+            <h3>Pizza Stage</h3>
+            <PizzaStage />
+          </div>
+          <div class="main-section">
+            <h3>Main Section</h3>
+            <MainSection />
+          </div>
+        </div>
+        <div class="order-form">
+          <h3>Create A Order</h3>
+          <OrderForm />
+        </div>
+      </div>
+    </>
   );
 }
 
