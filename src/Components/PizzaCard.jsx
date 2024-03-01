@@ -1,18 +1,27 @@
+import { useState } from "react";
+import Timer from "./Timer";
+
 const PizzaCard = ({ order, changeStatus }) => {
+  const [time, setTime] = useState({ minutes: 0, seconds: 0 });
+
   return (
     <>
       <div className="card mb-1">
         <div className="card-body p-1 d-flex justify-content-center">
           <div>
-            <h6 className="card-title">Order {order.orderid}</h6>
-            <p className="card-text mb-1">Time</p>
+            <h6 className="card-title">Order : {order.orderid}</h6>
             {order.status < 4 && (
-              <button
-                className="btn btn-primary btn-sm"
-                onClick={() => changeStatus(order.orderid, order.status)}
-              >
-                Next
-              </button>
+              <div>
+                <p className="card-text mb-1">
+                  <Timer time={time} setTime={setTime} />
+                </p>
+                <button
+                  className="btn btn-primary btn-sm"
+                  onClick={() => changeStatus(order.orderid, time)}
+                >
+                  Next
+                </button>
+              </div>
             )}
           </div>
         </div>

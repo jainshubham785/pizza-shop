@@ -22,6 +22,7 @@ const OrderForm = () => {
           ...formdata,
           orderid: orderid,
           status: 1,
+          totalTime: { minutes: 0, seconds: 0 },
         })
       );
       alert(`Order is created with Orderid ${orderid}`);
@@ -38,7 +39,7 @@ const OrderForm = () => {
     <>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label for="Customer-name">Customer name</label>
+          <label htmlFor="Customer-name">Customer name</label>
           <input
             type="text"
             className="form-control"
@@ -49,7 +50,7 @@ const OrderForm = () => {
           />
         </div>
         <div className="form-group">
-          <label for="pizza-type">Pizza Type</label>
+          <label htmlFor="pizza-type">Pizza Type</label>
           <select
             className="form-control"
             name="type"
@@ -62,7 +63,7 @@ const OrderForm = () => {
           </select>
         </div>
         <div className="form-group">
-          <label for="Pizza-size">Pizza Size</label>
+          <label htmlFor="Pizza-size">Pizza Size</label>
           <select
             className="form-control"
             name="size"
@@ -76,7 +77,7 @@ const OrderForm = () => {
           </select>
         </div>
         <div className="form-group">
-          <label for="Pizza-base">Pizza Base</label>
+          <label htmlFor="Pizza-base">Pizza Base</label>
           <select
             className="form-control"
             name="base"

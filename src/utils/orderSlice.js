@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { addTime } from "./constant";
 
 const orderSlice = createSlice({
   name: "order",
@@ -9,9 +10,13 @@ const orderSlice = createSlice({
     },
     updateOrder: (state, action) => {
       const updateOrder = state.find(
-        (order) => order.orderid === action.payload
+        (order) => order.orderid === action.payload.orderid
       );
       updateOrder.status = updateOrder.status + 1;
+      updateOrder.totalTime = addTime(
+        updateOrder.totalTime,
+        action.payload.time
+      );
     },
   },
 });

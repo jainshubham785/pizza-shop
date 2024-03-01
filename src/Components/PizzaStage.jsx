@@ -7,19 +7,24 @@ const PizzaStage = () => {
   const orders = useSelector((store) => store.order);
   const dispatch = useDispatch();
 
-  const changeStatus = (orderid, status) => {
-    dispatch(updateOrder(orderid));
+  const changeStatus = (orderid, time) => {
+    dispatch(
+      updateOrder({
+        orderid: orderid,
+        time: time,
+      })
+    );
   };
 
   return (
     <>
-      <table class="table table-bordered">
+      <table className="table table-bordered">
         <thead>
           <tr>
             {Object.values(status)
               ?.slice(0, 4)
               ?.map((status) => (
-                <th>{status}</th>
+                <th key={status}>{status}</th>
               ))}
           </tr>
         </thead>
@@ -29,28 +34,44 @@ const PizzaStage = () => {
               {orders
                 ?.filter((order) => order.status === 1)
                 ?.map((order) => (
-                  <PizzaCard order={order} changeStatus={changeStatus} />
+                  <PizzaCard
+                    key={order.orderid}
+                    order={order}
+                    changeStatus={changeStatus}
+                  />
                 ))}
             </td>
             <td>
               {orders
                 ?.filter((order) => order.status === 2)
                 ?.map((order) => (
-                  <PizzaCard order={order} changeStatus={changeStatus} />
+                  <PizzaCard
+                    key={order.orderid}
+                    order={order}
+                    changeStatus={changeStatus}
+                  />
                 ))}
             </td>
             <td>
               {orders
                 ?.filter((order) => order.status === 3)
                 ?.map((order) => (
-                  <PizzaCard order={order} changeStatus={changeStatus} />
+                  <PizzaCard
+                    key={order.orderid}
+                    order={order}
+                    changeStatus={changeStatus}
+                  />
                 ))}
             </td>
             <td>
               {orders
                 ?.filter((order) => order.status === 4)
                 ?.map((order) => (
-                  <PizzaCard order={order} changeStatus={changeStatus} />
+                  <PizzaCard
+                    key={order.orderid}
+                    order={order}
+                    changeStatus={changeStatus}
+                  />
                 ))}
             </td>
           </tr>
