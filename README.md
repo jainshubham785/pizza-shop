@@ -13,6 +13,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 codeSandBox URL [https://codesandbox.io/p/github/jainshubham785/pizza-shop/draft/keen-shadow?workspaceId=1924fe86-c047-452c-9dd8-973daed7342a]
 
+Live Site [https://dsyyl7-3000.csb.app/]
+
 ## Features
 
 Task is to create an application which simulates a pizza restaurant behavior. From taking orders
