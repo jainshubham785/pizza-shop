@@ -88,7 +88,7 @@ const OrderForm = () => {
             <option value="thin">Thin</option>
           </select>
         </div>
-        <button type="submit" className="btn btn-primary mt-1">
+        <button type="submit" className="btn btn-primary mt-2">
           Submit
         </button>
       </form>
