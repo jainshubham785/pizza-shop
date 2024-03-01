@@ -18,8 +18,14 @@ const orderSlice = createSlice({
         action.payload.time
       );
     },
+    cancleOrder: (state, action) => {
+      const updateOrder = state.find(
+        (order) => order.orderid === action.payload
+      );
+      updateOrder.status = 6;
+    },
   },
 });
 
-export const { createOrder, updateOrder } = orderSlice.actions;
+export const { createOrder, updateOrder, cancleOrder } = orderSlice.actions;
 export default orderSlice.reducer;

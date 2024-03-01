@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { createOrder } from "../utils/orderSlice";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 const OrderForm = () => {
   const [formdata, setFormdata] = useState({
@@ -14,11 +15,13 @@ const OrderForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     //generting orderid
     const orderid = orders.length + 1;
+
     //checking for orders pending in Placed stage
     const PlacedStatusOrders = orders.filter((order) => order.status === 1);
-    if (PlacedStatusOrders.length < 3) {
+    if (PlacedStatusOrders.length < 10) {
       //createing a order with formdata and other properties
       dispatch(
         createOrder({
@@ -29,9 +32,15 @@ const OrderForm = () => {
           totalTime: { minutes: 0, seconds: 0 },
         })
       );
-      alert(`Order is created with Orderid ${orderid}`);
+      toast.success("Order Created Successfully", {
+        position: "top-center",
+        autoClose: 3000,
+      });
     } else {
-      alert("Not taking any Order For Now");
+      toast.error("Not Taking Any Order For Now", {
+        position: "top-center",
+        autoClose: 3000,
+      });
     }
   };
 
