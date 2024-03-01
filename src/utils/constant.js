@@ -3,7 +3,8 @@ export const status = {
   2: "Order in Making",
   3: "Order Ready",
   4: "Order Picked",
-  5: "Order cancelled",
+  5: "Order Delivered",
+  6: "Order Cancelled",
 };
 
 export const addTime = (time1, time2) => {

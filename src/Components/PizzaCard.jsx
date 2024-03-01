@@ -39,7 +39,12 @@ const PizzaCard = ({ order, changeStatus }) => {
                 </button>
               </div>
             ) : (
-              <p>Picked</p>
+              <button
+                className="btn btn-primary btn-sm"
+                onClick={() => changeStatus(order.orderid, time)}
+              >
+                Picked
+              </button>
             )}
           </div>
         </div>
