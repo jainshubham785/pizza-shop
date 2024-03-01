@@ -1,4 +1,4 @@
-const PizzaCard = ({ order }) => {
+const PizzaCard = ({ order, changeStatus }) => {
   return (
     <>
       <div className="card mb-1">
@@ -6,7 +6,14 @@ const PizzaCard = ({ order }) => {
           <div>
             <h6 className="card-title">Order {order.orderid}</h6>
             <p className="card-text mb-1">Time</p>
-            <button className="btn btn-primary btn-sm">Next</button>
+            {order.status < 4 && (
+              <button
+                className="btn btn-primary btn-sm"
+                onClick={() => changeStatus(order.orderid, order.status)}
+              >
+                Next
+              </button>
+            )}
           </div>
         </div>
       </div>
