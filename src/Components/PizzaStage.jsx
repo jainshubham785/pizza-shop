@@ -7,6 +7,7 @@ const PizzaStage = () => {
   const orders = useSelector((store) => store.order);
   const dispatch = useDispatch();
 
+  //moving pizza to next stage
   const changeStatus = (orderid, time) => {
     dispatch(
       updateOrder({

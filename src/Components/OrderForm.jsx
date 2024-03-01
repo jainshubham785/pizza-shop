@@ -14,13 +14,17 @@ const OrderForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    //generting orderid
     const orderid = orders.length + 1;
+    //checking for orders pending in Placed stage
     const PlacedStatusOrders = orders.filter((order) => order.status === 1);
     if (PlacedStatusOrders.length < 3) {
+      //createing a order with formdata and other properties
       dispatch(
         createOrder({
           ...formdata,
           orderid: orderid,
+          //for status please refer constant.js file
           status: 1,
           totalTime: { minutes: 0, seconds: 0 },
         })

@@ -15,7 +15,7 @@ const Timer = ({ time, setTime }) => {
           }
           return { ...prevTime, seconds: newSeconds };
         });
-      }, 500);
+      }, 100);
     };
 
     startTimer();
