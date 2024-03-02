@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { addTime } from "./constant";
+import { addTime } from "../utils/constant";
 
 const orderSlice = createSlice({
   name: "order",

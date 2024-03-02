@@ -1,7 +1,7 @@
 import Header from "./Components/Header";
 import Body from "./Components/Body";
 import { Provider } from "react-redux";
-import appStore from "./utils/appStore";
+import appStore from "../src/redux/appStore";
 import { ToastContainer } from "react-toastify";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";

@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { status } from "../utils/constant";
 import PizzaCard from "./PizzaCard";
-import { updateOrder } from "../utils/orderSlice";
+import { updateOrder } from "../redux/orderSlice";
 
 const PizzaStage = () => {
   const orders = useSelector((store) => store.order);

@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { createOrder } from "../utils/orderSlice";
+import { createOrder } from "../redux/orderSlice";
 import { useState } from "react";
 import { toast } from "react-toastify";
 

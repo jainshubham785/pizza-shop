@@ -33,3 +33,11 @@
   border: 2px solid #ccc;
   border-radius: 8px;
 }
+
+@media screen and (max-width: 600px) {
+  .container-body {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+  }
+}

@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { status } from "../utils/constant";
-import { cancleOrder } from "../utils/orderSlice";
+import { cancleOrder } from "../redux/orderSlice";
 
 const MainSection = () => {
   const orders = useSelector((store) => store.order);
